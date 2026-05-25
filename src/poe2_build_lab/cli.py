@@ -8,6 +8,7 @@ from .data_loader import load_builds
 from .market import PriceBook
 from .models import ScoreResult, UserProfile
 from .recommender import recommend
+from .web import run as run_web
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -44,6 +45,10 @@ def main(argv: list[str] | None = None) -> int:
     diagnose_parser.add_argument("--prices", default=str(DEFAULT_PRICES), help="Path to price quote JSON.")
     diagnose_parser.add_argument("--budget-divines", type=float, required=True, help="Upgrade budget in Divine Orbs.")
 
+    serve_parser = subparsers.add_parser("serve", help="Run the local Alpha web app.")
+    serve_parser.add_argument("--host", default="127.0.0.1")
+    serve_parser.add_argument("--port", type=int, default=8765)
+
     args = parser.parse_args(argv)
 
     if args.command == "recommend":
@@ -70,6 +75,10 @@ def main(argv: list[str] | None = None) -> int:
         prices = PriceBook.from_file(args.prices)
         recommendations = diagnose_character(character, prices, args.budget_divines)
         _print_diagnosis(character.name, recommendations, args.budget_divines)
+        return 0
+
+    if args.command == "serve":
+        run_web(args.host, args.port)
         return 0
 
     parser.error(f"Unknown command: {args.command}")

@@ -12,6 +12,7 @@ dependencies = []
 
 [project.scripts]
 poe2-build-lab = "poe2_build_lab.cli:main"
+poe2-build-lab-alpha = "poe2_build_lab.web:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

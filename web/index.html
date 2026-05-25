@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>POE2 Build Lab Alpha</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>POE2 Build Lab Alpha</h1>
+        <p id="statusLine">Loading</p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-view="recommendView">Build 推荐</button>
+        <button class="tab" data-view="diagnoseView">角色诊断</button>
+        <button class="tab" data-view="dataView">数据状态</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="recommendView" class="view active">
+        <form id="recommendForm" class="workspace">
+          <div class="panel controls">
+            <label>职业
+              <select name="player_class" id="classSelect"></select>
+            </label>
+            <label>升华
+              <select name="ascendancy" id="ascendancySelect"></select>
+            </label>
+            <label>玩法
+              <select name="playstyles">
+                <option value="mapping">刷图</option>
+                <option value="bossing">Boss</option>
+                <option value="starter">开荒</option>
+                <option value="hardcore">HC</option>
+                <option value="mapping,bossing">全能</option>
+              </select>
+            </label>
+            <label>预算 D
+              <input name="budget_divines" type="number" min="0" step="0.5" value="5" />
+            </label>
+            <label>预算档
+              <select name="budget">
+                <option value="low">低</option>
+                <option value="medium" selected>中</option>
+                <option value="high">高</option>
+              </select>
+            </label>
+            <label>模式
+              <select name="trade_mode">
+                <option value="either">不限</option>
+                <option value="trade">交易</option>
+                <option value="ssf">SSF</option>
+              </select>
+            </label>
+            <div class="toggles">
+              <label><input name="hardcore" type="checkbox" /> HC</label>
+              <label><input name="avoid_uniques" type="checkbox" /> 避免绑定暗金</label>
+              <label><input name="controller_friendly" type="checkbox" /> 手柄</label>
+            </div>
+            <button type="submit" class="primary">运行推荐</button>
+          </div>
+          <div class="panel results">
+            <div class="panelHeader">
+              <h2>推荐结果</h2>
+              <span id="recommendMeta"></span>
+            </div>
+            <div id="recommendResults" class="resultList"></div>
+          </div>
+        </form>
+      </section>
+
+      <section id="diagnoseView" class="view">
+        <form id="diagnoseForm" class="workspace">
+          <div class="panel controls">
+            <label>升级预算 D
+              <input name="budget_divines" type="number" min="0" step="0.5" value="20" />
+            </label>
+            <label>角色 JSON
+              <textarea name="character" id="characterInput" spellcheck="false"></textarea>
+            </label>
+            <button type="button" id="loadSample">载入样例</button>
+            <button type="submit" class="primary">运行诊断</button>
+          </div>
+          <div class="panel results">
+            <div class="panelHeader">
+              <h2>升级顺序</h2>
+              <span id="diagnoseMeta"></span>
+            </div>
+            <div id="diagnoseResults" class="resultList"></div>
+          </div>
+        </form>
+      </section>
+
+      <section id="dataView" class="view">
+        <div class="dataGrid">
+          <div class="panel">
+            <h2>升华覆盖</h2>
+            <div id="ascendancyCoverage" class="coverage"></div>
+          </div>
+          <div class="panel">
+            <h2>Alpha 状态</h2>
+            <pre id="stateDump"></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

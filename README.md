@@ -16,6 +16,18 @@ POE2 Build Lab 是一个给 Path of Exile 2 做版本研究、数据归档和 Bu
 
 ## 快速运行
 
+启动 Alpha Web：
+
+```powershell
+python run_alpha.py --host 127.0.0.1 --port 8765
+```
+
+然后打开：
+
+```text
+http://127.0.0.1:8765/
+```
+
 在项目根目录执行：
 
 ```powershell

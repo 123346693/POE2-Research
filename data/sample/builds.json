@@ -39,6 +39,38 @@
       "notes": "Placeholder archetype for testing mapping-focused recommendations."
     },
     {
+      "id": "seed-monk-invoker-budget-flurry",
+      "name": "Budget Invoker Tempest Flurry",
+      "game_version": "seed",
+      "source": "synthetic_seed",
+      "player_class": "Monk",
+      "ascendancy": "Invoker",
+      "main_skill": "Tempest Flurry",
+      "damage_type": "lightning",
+      "tags": ["mapping", "starter", "trade"],
+      "budget": "low",
+      "estimated_cost_divines": 5.0,
+      "trade_mode": "trade",
+      "required_uniques": [],
+      "key_items": ["attack speed quarterstaff", "life/resistance rares", "evasion energy shield bases"],
+      "defensive_layers": ["evasion", "energy_shield", "freeze"],
+      "metrics": {
+        "damage": 73,
+        "clear_speed": 82,
+        "survivability": 69,
+        "cost_efficiency": 84,
+        "patch_stability": 64,
+        "ssf_viability": 50,
+        "ease_of_play": 68,
+        "data_confidence": 35
+      },
+      "nerf_risk": "medium",
+      "pros": ["Fits a 5D test budget", "No required uniques", "Good mapping baseline"],
+      "cons": ["Lower boss ceiling", "Needs careful positioning"],
+      "evidence": ["seed data"],
+      "notes": "Alpha test archetype for budget-constrained Invoker recommendations."
+    },
+    {
       "id": "seed-witch-minion-bosser",
       "name": "Minion Witch Bossing Core",
       "game_version": "seed",
