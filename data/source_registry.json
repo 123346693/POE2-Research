@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "id": "poe2db",
+      "name": "POE2DB",
+      "url": "https://poe2db.tw/",
+      "kind": "game_database",
+      "status": "manual_or_adapter",
+      "notes": "Use for game data such as gems, items, modifiers, passives, and datamined changes. Respect site terms and cache snapshots with timestamps."
+    },
+    {
+      "id": "poe2wiki",
+      "name": "Path of Exile 2 Wiki",
+      "url": "https://www.poe2wiki.net/",
+      "kind": "wiki",
+      "status": "manual_or_adapter",
+      "notes": "Use as secondary reference for mechanics, item pages, class pages, and patch context."
+    },
+    {
+      "id": "user_tests",
+      "name": "User Test Notes",
+      "url": null,
+      "kind": "manual_evidence",
+      "status": "ready",
+      "notes": "Personal observations, boss kills, mapping speed, deaths, and budget notes can be added as evidence."
+    }
+  ]
+}

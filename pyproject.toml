@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poe2-build-lab"
+version = "0.1.0"
+description = "Research and recommendation engine for Path of Exile 2 builds."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+poe2-build-lab = "poe2_build_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
