@@ -17,6 +17,30 @@
       "notes": "Use as secondary reference for mechanics, item pages, class pages, and patch context."
     },
     {
+      "id": "official_developer_api",
+      "name": "Path of Exile Developer API",
+      "url": "https://www.pathofexile.com/developer/docs",
+      "kind": "official_api",
+      "status": "oauth_required",
+      "notes": "Use for account characters, leagues, and POE2 currency exchange history when OAuth/client scopes are configured."
+    },
+    {
+      "id": "official_trade2",
+      "name": "Path of Exile 2 Trade",
+      "url": "https://www.pathofexile.com/trade2",
+      "kind": "official_trade_site",
+      "status": "manual_or_rate_limited_adapter",
+      "notes": "Use for item price verification and exact affix searches. Cache results and respect rate limits and site policy."
+    },
+    {
+      "id": "poe_ninja_poe2_economy",
+      "name": "poe.ninja POE2 Economy",
+      "url": "https://poe.ninja/",
+      "kind": "economy_aggregate",
+      "status": "manual_or_adapter",
+      "notes": "Use as a price trend and unique-item signal, not as the only source for rare item upgrades."
+    },
+    {
       "id": "user_tests",
       "name": "User Test Notes",
       "url": null,

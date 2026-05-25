@@ -131,7 +131,19 @@ def _fit_adjustment(build: Build, profile: UserProfile) -> tuple[float, list[str
 
     requested_budget = BUDGET_RANK.get(profile.budget, 2)
     build_budget = BUDGET_RANK.get(build.budget, 2)
-    if build_budget <= requested_budget:
+    if profile.budget_divines is not None and build.estimated_cost_divines is not None:
+        if build.estimated_cost_divines <= profile.budget_divines:
+            score += 7.0
+            strengths.append(
+                f"Fits currency budget: {build.estimated_cost_divines:g}D <= {profile.budget_divines:g}D."
+            )
+        else:
+            over = build.estimated_cost_divines - profile.budget_divines
+            score -= min(25.0, 5.0 + over * 1.5)
+            concerns.append(
+                f"Over currency budget: estimated {build.estimated_cost_divines:g}D, requested {profile.budget_divines:g}D."
+            )
+    elif build_budget <= requested_budget:
         score += 5.0
         strengths.append(f"Fits budget: {build.budget}.")
     else:

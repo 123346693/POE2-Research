@@ -1,0 +1,45 @@
+{
+  "name": "ExampleMonk",
+  "level": 82,
+  "league": "Standard",
+  "player_class": "Monk",
+  "ascendancy": "Invoker",
+  "main_skill": "Tempest Flurry",
+  "life": 2100,
+  "energy_shield": 600,
+  "spirit": 100,
+  "resistances": {
+    "fire": 73,
+    "cold": 66,
+    "lightning": 78,
+    "chaos": 12
+  },
+  "defensive_layers": ["evasion", "freeze"],
+  "items": [
+    {
+      "slot": "weapon",
+      "name": "Training Quarterstaff",
+      "base_type": "Quarterstaff",
+      "rarity": "rare",
+      "item_level": 68,
+      "mods": ["campaign weapon", "missing attack speed", "low dps"]
+    },
+    {
+      "slot": "body_armour",
+      "name": "Thin Adept Robe",
+      "base_type": "Energy Shield Body Armour",
+      "rarity": "rare",
+      "item_level": 70,
+      "mods": ["low energy shield", "missing life"]
+    },
+    {
+      "slot": "boots",
+      "name": "Unstable Striders",
+      "base_type": "Boots",
+      "rarity": "rare",
+      "item_level": 72,
+      "mods": ["movement speed", "low cold resistance"]
+    }
+  ],
+  "notes": "Synthetic character snapshot for testing upgrade diagnosis."
+}

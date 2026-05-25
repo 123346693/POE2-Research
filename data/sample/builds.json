@@ -17,8 +17,10 @@
       "damage_type": "fire",
       "tags": ["mapping", "starter", "trade", "controller"],
       "budget": "low",
+      "estimated_cost_divines": 4.5,
       "trade_mode": "either",
       "required_uniques": [],
+      "key_items": ["high physical/fire crossbow", "movement speed boots", "life/resistance armour pieces"],
       "defensive_layers": ["armour", "evasion", "range"],
       "metrics": {
         "damage": 72,
@@ -47,8 +49,10 @@
       "damage_type": "fire",
       "tags": ["bossing", "starter", "ssf"],
       "budget": "medium",
+      "estimated_cost_divines": 7.0,
       "trade_mode": "either",
       "required_uniques": [],
+      "key_items": ["minion level sceptre", "spirit body armour", "energy shield recovery pieces"],
       "defensive_layers": ["minion_body_block", "energy_shield", "recovery"],
       "metrics": {
         "damage": 84,
@@ -77,8 +81,10 @@
       "damage_type": "lightning",
       "tags": ["mapping", "bossing", "endgame"],
       "budget": "high",
+      "estimated_cost_divines": 28.0,
       "trade_mode": "trade",
       "required_uniques": ["High-roll weapon"],
+      "key_items": ["high-roll quarterstaff", "shock/freeze scaling jewels", "premium evasion/energy shield gear"],
       "defensive_layers": ["evasion", "energy_shield", "freeze"],
       "metrics": {
         "damage": 91,
@@ -107,8 +113,10 @@
       "damage_type": "physical",
       "tags": ["hardcore", "bossing", "starter"],
       "budget": "low",
+      "estimated_cost_divines": 5.0,
       "trade_mode": "either",
       "required_uniques": [],
+      "key_items": ["high armour shield", "life/resistance rares", "stun scaling mace"],
       "defensive_layers": ["armour", "stun", "life", "block"],
       "metrics": {
         "damage": 69,

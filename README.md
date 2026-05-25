@@ -7,8 +7,9 @@ POE2 Build Lab 是一个给 Path of Exile 2 做版本研究、数据归档和 Bu
 ## 当前能力
 
 - 从本地 JSON 数据库读取 Build 候选。
-- 按职业、升华、玩法、预算、SSF/交易、HC、生存阈值、是否依赖暗金等条件打分。
+- 按职业、升华、玩法、预算、Divine 数量、SSF/交易、HC、生存阈值、是否依赖暗金等条件打分。
 - 输出推荐排名、总分、推荐理由、扣分点和关键装备/防御层。
+- 读取角色快照，按预算输出装备/防御/伤害升级优先级。
 - 提供 POE2DB 导出适配器骨架，后续可接自动抓取或手动导入。
 
 示例数据是 seed data，只用于验证流程，不代表真实版本强度。
@@ -35,6 +36,20 @@ $env:PYTHONPATH="src"
 python -m poe2_build_lab.cli recommend --data data/sample/builds.json --class Mercenary --playstyle mapping --budget low --ssf --avoid-uniques --top 5
 ```
 
+5D 预算示例：
+
+```powershell
+$env:PYTHONPATH="src"
+python -m poe2_build_lab.cli recommend --data data/sample/builds.json --ascendancy Invoker --playstyle mapping --budget-divines 5 --top 3
+```
+
+角色诊断示例：
+
+```powershell
+$env:PYTHONPATH="src"
+python -m poe2_build_lab.cli diagnose --character data/sample/character.json --prices data/sample/prices.json --budget-divines 20
+```
+
 ## 推荐逻辑
 
 评分分成两层：
@@ -47,8 +62,8 @@ python -m poe2_build_lab.cli recommend --data data/sample/builds.json --class Me
 ## 计划
 
 - 接 POE2DB / Wiki 数据归档。
-- 接天梯与热门 Build 统计。
-- 接价格数据，区分 league start、低预算、中预算、高预算。
+- 接官方 OAuth 角色导入。
+- 接官方 trade2 / poe.ninja / 价格快照，区分 5D、20D、100D 等预算。
 - 加入技能/辅助宝石/装备词缀的约束检查。
 - 加 Web UI，让你用中文直接输入需求并得到 Build 方案。
 

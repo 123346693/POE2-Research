@@ -19,7 +19,9 @@ class RecommenderTest(unittest.TestCase):
                 tags=("mapping", "starter"),
                 budget="low",
                 trade_mode="either",
+                estimated_cost_divines=3.0,
                 required_uniques=(),
+                key_items=(),
                 defensive_layers=("armour",),
                 metrics={
                     "damage": 65,
@@ -45,7 +47,9 @@ class RecommenderTest(unittest.TestCase):
                 tags=("bossing",),
                 budget="high",
                 trade_mode="trade",
+                estimated_cost_divines=30.0,
                 required_uniques=("Rare Unique",),
+                key_items=("Rare Unique",),
                 defensive_layers=("evasion",),
                 metrics={
                     "damage": 95,
@@ -65,6 +69,53 @@ class RecommenderTest(unittest.TestCase):
         result = recommend(builds, profile, top=1)
 
         self.assertEqual(result[0].build.id, "cheap-mapper")
+
+    def test_requested_ascendancy_is_a_hard_filter_when_available(self) -> None:
+        builds = [
+            Build(
+                id="off-ascendancy",
+                name="Off Ascendancy",
+                game_version="test",
+                source="test",
+                player_class="Mercenary",
+                ascendancy="Gemling Legionnaire",
+                main_skill="Grenade",
+                damage_type="fire",
+                tags=("mapping",),
+                budget="low",
+                trade_mode="either",
+                estimated_cost_divines=3.0,
+                required_uniques=(),
+                key_items=(),
+                defensive_layers=("armour",),
+                metrics={"damage": 80, "clear_speed": 90, "survivability": 80},
+                nerf_risk="low",
+            ),
+            Build(
+                id="requested-ascendancy",
+                name="Requested Ascendancy",
+                game_version="test",
+                source="test",
+                player_class="Monk",
+                ascendancy="Invoker",
+                main_skill="Tempest Flurry",
+                damage_type="lightning",
+                tags=("mapping",),
+                budget="high",
+                trade_mode="trade",
+                estimated_cost_divines=30.0,
+                required_uniques=(),
+                key_items=(),
+                defensive_layers=("evasion",),
+                metrics={"damage": 50, "clear_speed": 50, "survivability": 50},
+                nerf_risk="medium",
+            ),
+        ]
+
+        profile = UserProfile(ascendancy="Invoker", playstyles=("mapping",), budget_divines=5)
+        result = recommend(builds, profile, top=1)
+
+        self.assertEqual(result[0].build.id, "requested-ascendancy")
 
 
 if __name__ == "__main__":

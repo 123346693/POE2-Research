@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "name": "POE2 ascendancy knowledge seed",
+    "captured_at": "2026-05-25",
+    "sources": [
+      "https://www.poe2wiki.net/wiki/Character_class",
+      "https://poe2db.tw/us/Ascendancy_class"
+    ],
+    "warning": "This file tracks class and ascendancy coverage. It is not yet a final balance verdict."
+  },
+  "classes": [
+    {
+      "class": "Warrior",
+      "attribute_family": "strength",
+      "specialties": ["mace", "warcry", "shield"],
+      "ascendancies": ["Titan", "Warbringer", "Smith of Kitava"]
+    },
+    {
+      "class": "Ranger",
+      "attribute_family": "dexterity",
+      "specialties": ["bow"],
+      "ascendancies": ["Deadeye", "Pathfinder"]
+    },
+    {
+      "class": "Huntress",
+      "attribute_family": "dexterity",
+      "specialties": ["spear"],
+      "ascendancies": ["Ritualist", "Amazon", "Spirit Walker"]
+    },
+    {
+      "class": "Witch",
+      "attribute_family": "intelligence",
+      "specialties": ["minions", "chaos", "occult spells"],
+      "ascendancies": ["Infernalist", "Blood Mage", "Lich"]
+    },
+    {
+      "class": "Sorceress",
+      "attribute_family": "intelligence",
+      "specialties": ["elemental spells"],
+      "ascendancies": ["Stormweaver", "Chronomancer", "Disciple of Varashta"]
+    },
+    {
+      "class": "Mercenary",
+      "attribute_family": "strength/dexterity",
+      "specialties": ["crossbow", "grenade"],
+      "ascendancies": ["Witchhunter", "Gemling Legionnaire", "Tactician"]
+    },
+    {
+      "class": "Monk",
+      "attribute_family": "dexterity/intelligence",
+      "specialties": ["unarmed", "quarterstaff"],
+      "ascendancies": ["Invoker", "Acolyte of Chayula", "Martial Artist"]
+    },
+    {
+      "class": "Druid",
+      "attribute_family": "strength/intelligence",
+      "specialties": ["shapeshifting", "animal minions", "nature spells"],
+      "ascendancies": ["Shaman", "Oracle"]
+    },
+    {
+      "class": "Marauder",
+      "attribute_family": "strength",
+      "specialties": ["axe"],
+      "ascendancies": []
+    },
+    {
+      "class": "Duelist",
+      "attribute_family": "strength/dexterity",
+      "specialties": ["sword"],
+      "ascendancies": []
+    },
+    {
+      "class": "Shadow",
+      "attribute_family": "dexterity/intelligence",
+      "specialties": ["dagger", "trap"],
+      "ascendancies": []
+    },
+    {
+      "class": "Templar",
+      "attribute_family": "strength/intelligence",
+      "specialties": ["flail", "holy spells"],
+      "ascendancies": []
+    }
+  ]
+}

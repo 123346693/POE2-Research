@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "name": "POE2 Build Lab price seed data",
+    "created_at": "2026-05-25",
+    "warning": "Synthetic price quotes for local testing. Replace with trade2 or poe.ninja snapshots before making real recommendations."
+  },
+  "quotes": [
+    {
+      "query": "resistance rare boots",
+      "league": "Standard",
+      "median_divines": 1.5,
+      "low_divines": 0.8,
+      "high_divines": 2.5,
+      "sample_size": 20,
+      "source": "synthetic_seed",
+      "captured_at": "2026-05-25T00:00:00Z",
+      "confidence": 0.35
+    },
+    {
+      "query": "life energy shield rare body armour",
+      "league": "Standard",
+      "median_divines": 4.0,
+      "low_divines": 2.5,
+      "high_divines": 7.0,
+      "sample_size": 12,
+      "source": "synthetic_seed",
+      "captured_at": "2026-05-25T00:00:00Z",
+      "confidence": 0.3
+    },
+    {
+      "query": "Tempest Flurry weapon",
+      "league": "Standard",
+      "median_divines": 12.0,
+      "low_divines": 8.0,
+      "high_divines": 18.0,
+      "sample_size": 9,
+      "source": "synthetic_seed",
+      "captured_at": "2026-05-25T00:00:00Z",
+      "confidence": 0.3
+    },
+    {
+      "query": "starter rare belt",
+      "league": "Standard",
+      "median_divines": 0.7,
+      "low_divines": 0.3,
+      "high_divines": 1.2,
+      "sample_size": 30,
+      "source": "synthetic_seed",
+      "captured_at": "2026-05-25T00:00:00Z",
+      "confidence": 0.4
+    }
+  ]
+}
